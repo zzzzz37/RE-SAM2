@@ -32,7 +32,7 @@ download checkpoint [sam2_hiera_tiny](https://dl.fbaipublicfiles.com/segment_any
 
 ```
 Project/
-├── RE_SAM2/
+├── RE-SAM2/
 │   ├── checkpoints/
 │   │   ├── sam2_hiera_tiny.pt
 │   ├── demo.py
@@ -58,7 +58,7 @@ Project/
 │   ├── CHAOST2/
 │   ├── SABS/
 │   ├── CMR/
-├── RE_SAM2/
+├── RE-SAM2/
 │   ├── checkpoints/
 │   │   ├── sam2_hiera_tiny.pt
 │   ├── train_and_test.py
