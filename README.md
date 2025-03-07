@@ -40,6 +40,7 @@ Project/
 ```
 
 ```
+cd RE_SAM2
 python demo.py
 ```
 
