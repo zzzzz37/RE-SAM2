@@ -44,9 +44,6 @@ def config():
 def main(n_fold):
     _config = config()
 
-    model = RE_SAM2()
-    model = model.cuda()
-
     random.seed(_config["seed"])
     torch.manual_seed(_config["seed"])
     torch.cuda.manual_seed_all(_config["seed"])
@@ -77,6 +74,9 @@ def main(n_fold):
             continue
         elif (not np.intersect1d([label_val], TEST_LABEL)):
             continue
+
+        model = RE_SAM2()
+        model = model.cuda()
 
         # Get support sample + mask for current class.
         support_sample = test_dataset.getSupport(label=label_val, all_slices=False, N=_config['n_part'])
