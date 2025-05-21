@@ -108,7 +108,7 @@ python train_and_test.py --dataset CMR
 | SAM2 (with fine-tune) | ×   | 78.46 | 77.77 | 78.44 |
 | **Ours** | ×   | **85.31** | **86.12** | **82.18** |
 
-The training takes（in 5 folds） ∼1.3h on a single Nvidia RTX 2080Ti GPU, consuming 4GBs of memory.
+The training takes（in 5 folds） ∼1.3h on a single Nvidia RTX 3090 GPU, consuming 4GBs of memory.
 
 Stage 1：~41s per organ
 
