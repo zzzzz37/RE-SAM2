@@ -1,7 +1,5 @@
 # RE-SAM2: Boosting Few-Shot Medical Image Segmentation via Reinforcement Learning and Ensemble Learning
 
-![pipeline](./fig/RE_SAM2.jpg)
-
 ### Dependencies
 
 Flowing [SAM2](https://github.com/facebookresearch/sam2), download checkpoint [sam2_hiera_tiny](https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_tiny.pt) and run SAM2 model. Make sure your environment supports running SAM2.
@@ -32,7 +30,7 @@ download checkpoint [sam2_hiera_tiny](https://dl.fbaipublicfiles.com/segment_any
 
 ```
 Project/
-├── RE-SAM2/
+├── RE_SAM2/
 │   ├── checkpoints/
 │   │   ├── sam2_hiera_tiny.pt
 │   ├── demo.py
@@ -40,7 +38,6 @@ Project/
 ```
 
 ```
-cd RE-SAM2
 python demo.py
 ```
 
@@ -58,7 +55,7 @@ Project/
 │   ├── CHAOST2/
 │   ├── SABS/
 │   ├── CMR/
-├── RE-SAM2/
+├── RE_SAM2/
 │   ├── checkpoints/
 │   │   ├── sam2_hiera_tiny.pt
 │   ├── train_and_test.py
@@ -89,14 +86,38 @@ Run CMR:
 python train_and_test.py --dataset CMR
 ```
 
+## Result
+
+| Method | SSL | Abd-MRI - Mean | Abd-CT - Mean | Card-MRI - Mean |
+| --- | --- | --- | --- | --- |
+| ALPNet | √   | 76.81 | 67.62 | 77.94 |
+| ADNet | √   | 63.2 | 52.63 | 75.76 |
+| AAS-DCL | √   | 76.36 | 68.16 | 76.12 |
+| SR&CL | √   | 77.65 | 67.94 | 76.32 |
+| CRAPNet | √   | 75.52 | 69.72 | 75.59 |
+| RPT | √   | 79.04 | 71.69 | 79.19 |
+| Q-Net | √   | 68.59 | -   | 78.15 |
+| GMRD | √   | 79.7 | 77.32 | 79.11 |
+| ALPNet | ×   | 68.65 | 65.64 | 67.73 |
+| ADNet | ×   | 63.41 | 59.28 | 63.56 |
+| CATNet | ×   | 59.93 | 54.88 | 58.12 |
+| GMRD | ×   | 65.55 | 60.27 | 59.82 |
+| Q-Net | ×   | 73.01 | 67.15 | 71.81 |
+| RPT | ×   | 74.9 | 68.18 | 72.48 |
+| SAM2 (w/o fine-tune) | ×   | 68.57 | 68.60 | 66.62 |
+| SAM2 (with fine-tune) | ×   | 78.46 | 77.77 | 78.44 |
+| **Ours** | ×   | **85.31** | **86.12** | **82.18** |
+
+The training takes（in 5 folds） ∼1.3h on a single Nvidia RTX 2080Ti GPU, consuming 4GBs of memory.
+
+Stage 1：~41s per organ
+
+Stage 2：~33s per organ
+
 ## Todo
 
 Make the code and its initial execution simpler.
 
-More experiment result.
-
 ## Acknowledgement
 
 Our code is based the works: [SSL-ALPNet](https://github.com/cheng-01037/Self-supervised-Fewshot-Medical-Image-Segmentation), [ADNet](https://github.com/sha168/ADNet) ,[QNet](https://github.com/ZJLAB-AMMI/Q-Net), [RPT](https://github.com/YazhouZhu19/RPT) and [SAM2](https://github.com/facebookresearch/sam2). Appreciate their excellent work.
-
-
