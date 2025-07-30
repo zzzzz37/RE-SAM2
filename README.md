@@ -104,8 +104,8 @@ python train_and_test.py --dataset CMR
 | GMRD | ×   | 65.55 | 60.27 | 59.82 |
 | Q-Net | ×   | 73.01 | 67.15 | 71.81 |
 | RPT | ×   | 74.9 | 68.18 | 72.48 |
-| SAM2 (w/o fine-tune) | ×   | 68.57 | 68.60 | 66.62 |
-| SAM2 (with fine-tune) | ×   | 78.46 | 77.77 | 78.44 |
+| SAM2 (w/o fine-tune) | ×   | 75.37 | 76.17 | 69.20 |
+| SAM2 (with fine-tune) | ×   | 82.71 | 82.83 | 78.82 |
 | **Ours** | ×   | **85.31** | **86.12** | **82.18** |
 
 The training takes（in 5 folds） ∼1.3h on a single Nvidia RTX 3090 GPU, consuming 4GBs of memory.
